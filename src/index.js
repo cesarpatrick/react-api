@@ -10,14 +10,17 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Soccer from "./components/Soccer/Soccer";
 import SoccerTeam from "./components/Soccer/SoccerTeam";
+import League from "./components/Soccer/League/League";
 
 ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
           <Switch>
               <Route path="/" exact component={App} />
+              <Route path="/home" exact component={App} />
               <Route path="/Soccer" component={Soccer} />
               <Route path="/soccerTeam" component={SoccerTeam} />
+              <Route path="/league" component={League} />
           </Switch>
       </BrowserRouter>
   </React.StrictMode>,

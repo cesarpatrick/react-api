@@ -1,5 +1,7 @@
 import React from "react";
 import {Button, Card, Col, Figure, ListGroup, Nav, Row, Spinner} from "react-bootstrap";
+import {Link} from "react-router-dom";
+import LeagueCard from "./LeagueCard";
 
 
 export default class ListLeagueCard extends React.Component {
@@ -33,20 +35,10 @@ export default class ListLeagueCard extends React.Component {
 
         return this.state.leagues.map(item => (
 
-            <Figure>
-                <Col xs="4" key={item.idLeague}>
-                    <Card align="center" style={{width: '18rem'}}>
-                        <Card.Body>
-                            <Card.Img variant="top"
-                                      src={item.strBadge}/>
-                            <Card.Text>
-                                <ListGroup variant="flush">
-                                    <ListGroup.Item>{item.strLeague}</ListGroup.Item>
-                                    <ListGroup.Item>{item.strCountry}</ListGroup.Item>
-                                </ListGroup>
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
+            <Figure key={item.idLeague}>
+                <Col xs="4">
+                    <LeagueCard  strLeague={item.strLeague} strCountry={item.strCountry}
+                                strBadge={item.strBadge} idLeague={item.idLeague}></LeagueCard>
                 </Col>
             </Figure>
         ))

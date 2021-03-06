@@ -1,8 +1,8 @@
 import React from "react";
 import IndexFooter from "../Footers/IndexFooter";
 import IndexNavbar from "../Navbars/IndexNavbar";
-import {Col, Container, Row} from "react-bootstrap";
-import ListLeagueCard from "./ListLeagueCard";
+import {Container} from "react-bootstrap";
+import ListLeagueCard from "./League/ListLeagueCard";
 
 export default class Soccer extends React.Component {
 
@@ -31,10 +31,10 @@ export default class Soccer extends React.Component {
                     <h2 className="pageTitle">Soccer Leagues</h2>
                     <br/>
 
-                            {this.state.leagues.map(item => (
-                                <ListLeagueCard value={item.idLeague}></ListLeagueCard>
+                    {this.state.leagues.map(item => (
+                        <ListLeagueCard key={item.idLeague} value={item.idLeague}></ListLeagueCard>
 
-                            ))}
+                    ))}
 
                 </Container>,
 

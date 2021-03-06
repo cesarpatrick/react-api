@@ -19,8 +19,21 @@ code {
 
 .pageTitle{
   color: #F0C659;
+  text-align: justify;
+}
+.eventTitle{
+  color: #000000;
+  text-align: right;
+}
+.eventTitleCenter{
+  color: #F0C659;
+  text-align: center;
 }
 
 div#soccerPage{
   margin-left: 5%;
+}
+
+.badge-warning#eventTextColor {
+  color:black;
 }
