@@ -26,7 +26,7 @@ export default class IndexNavbar extends React.Component {
 
         if (loading) return <Spinner animation="border"/>;
 
-        return <Navbar bg="dark" variant="dark">
+        return <div><Navbar bg="dark" variant="dark">
                 <Navbar.Brand href="#home">
                     <Image
                         src="https://64.media.tumblr.com/e4c00bb9486d6c9edc0b053b0d143277/bdda942d8619c323-b0/s250x400/d486b10f11a93f288c604d5f42281584cffdf23a.png"
@@ -37,7 +37,7 @@ export default class IndexNavbar extends React.Component {
 
                     {this.state.sports.map(item => (
 
-                            <Nav.Link key={item.idLeague} href="/soccer"><Button variant="outline-warning">{item.strSport}</Button>{' '}
+                            <Nav.Link key={item.strSport} href="/soccer"><Button variant="outline-warning">{item.strSport}</Button>{' '}
                             </Nav.Link>
 
                     ))}
@@ -47,7 +47,7 @@ export default class IndexNavbar extends React.Component {
                                                rounrounded="true"><span><BsPeopleCircle></BsPeopleCircle></span></Button>{''}
                     </Nav.Link>
                 </Nav>
-            </Navbar>
+            </Navbar></div>
     }
 
 }

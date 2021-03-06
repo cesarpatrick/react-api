@@ -1,5 +1,5 @@
 import React from "react";
-import {Card} from "react-bootstrap";
+import {Card, OverlayTrigger, Tooltip} from "react-bootstrap";
 import {Link} from "react-router-dom";
 
 export default class LeagueCard extends React.Component {
@@ -11,26 +11,34 @@ export default class LeagueCard extends React.Component {
         strBadge: this.props.strBadge
     };
 
-
     render() {
-        return (
+        const renderTooltip = (props) => (
+            <Tooltip id="button-tooltip" {...props}>
+                {this.state.strLeague}
+            </Tooltip>
+        );
 
-            <Link to={{
+        return (<Link to={{
                 pathname: `/league`,
                 leagueProps: {
                     leagueName: this.state.strLeague,
                     idLeague: this.state.idLeague
                 }
             }}>
-                <Card align="center" style={{width: '18rem'}}>
-                    <Card.Body>
-                        <Card.Img variant="top"
-                                  src={this.state.strBadge}/>
+                <OverlayTrigger
+                    placement="right"
+                    delay={{show: 250, hide: 400}}
+                    overlay={renderTooltip}
+                >
+                    <Card align="center" style={{width: '18rem'}}>
+                        <Card.Body>
+                            <Card.Img variant="top"
+                                      src={this.state.strBadge}/>
 
-                    </Card.Body>
-                </Card>
+                        </Card.Body>
+                    </Card>
+                </OverlayTrigger>
             </Link>
-
         )
     }
 }

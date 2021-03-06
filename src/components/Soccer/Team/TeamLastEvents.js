@@ -1,5 +1,5 @@
 import React from "react";
-import {Badge, Col, Container, Image, Row, Spinner} from "react-bootstrap";
+import {Badge, Col, Container, Row, Spinner} from "react-bootstrap";
 import {FcCalendar, FcHome} from "react-icons/all";
 
 export default class LastEvents extends React.Component {
@@ -27,7 +27,7 @@ export default class LastEvents extends React.Component {
 
         if (loading) return <Spinner animation="border"/>;
         return this.state.events.map(item => (
-            <div key={item.idEvent}>
+            <div key={item.idLeague}>
                 <Container>
                     <Row>
                         <Col sm={2} className="eventTitle">
@@ -41,6 +41,7 @@ export default class LastEvents extends React.Component {
                             <Badge variant="warning" id="eventTextColor"><FcHome></FcHome>{" "}{item.strVenue}
                             </Badge>
                         </Col>
+
                     </Row>
                 </Container>
             </div>

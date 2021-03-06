@@ -1,5 +1,5 @@
 import React from "react";
-import {Card, Col, Figure, Row, Spinner} from "react-bootstrap";
+import {Card, Col, Image, Row, Spinner} from "react-bootstrap";
 
 export default class LeagueDetails extends React.Component {
 
@@ -28,7 +28,6 @@ export default class LeagueDetails extends React.Component {
         if (loading) return <Spinner animation="border"/>;
         return this.state.league.map(item => (
             <div key={item.idLeague}>
-
                 <Card align="center" style={{width: '95%'}}>
                     <Card.Body>
                         <Card.Img variant="top"
@@ -37,9 +36,9 @@ export default class LeagueDetails extends React.Component {
                 </Card>
 
                 <span className="pageTitle">{item.strDescriptionEN}</span>
+                <h2 className="pageTitle">Trophy</h2>
+                <Col sm={4}><Image style={{width: '20rem'}} src={item.strTrophy}></Image></Col>
             </div>
-
         ))
-
     }
 }

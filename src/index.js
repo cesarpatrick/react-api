@@ -11,6 +11,7 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Soccer from "./components/Soccer/Soccer";
 import SoccerTeam from "./components/Soccer/SoccerTeam";
 import League from "./components/Soccer/League/League";
+import Team from "./components/Soccer/Team/Team";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -21,6 +22,7 @@ ReactDOM.render(
               <Route path="/Soccer" component={Soccer} />
               <Route path="/soccerTeam" component={SoccerTeam} />
               <Route path="/league" component={League} />
+              <Route path="/team" component={Team} />
           </Switch>
       </BrowserRouter>
   </React.StrictMode>,

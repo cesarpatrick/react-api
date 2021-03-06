@@ -1,10 +1,9 @@
 import React from "react";
 import {Card, Col, Figure, Spinner} from "react-bootstrap";
 import {Link} from "react-router-dom";
-
+import {FcExpand} from "react-icons/all";
 
 export default class ListTeamCard extends React.Component {
-
 
     state = {
         teams: [],
@@ -12,10 +11,9 @@ export default class ListTeamCard extends React.Component {
         idLeague: this.props.idLeague
     };
 
-
     componentDidMount() {
 
-        fetch('https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id='+this.state.idLeague)
+        fetch('https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=' + this.state.idLeague)
             .then(res => res.json())
             .then(res => {
                 this.setState({
@@ -25,7 +23,6 @@ export default class ListTeamCard extends React.Component {
             });
     }
 
-
     render() {
 
         const {loading} = this.state;
@@ -33,16 +30,24 @@ export default class ListTeamCard extends React.Component {
         if (loading) return <Spinner animation="border"/>;
 
         return this.state.teams.map(item => (
-            <Figure key={item.idTeam}>
+            <Figure>
                 <Col xs="4">
-                    <Link to={{path: "/team"}}>
-                        <Card align="center" style={{width: '9rem'}}>
-                            <Card.Body>
-                                <Card.Img variant="top"
-                                          src={item.strTeamBadge}/>
-                            </Card.Body>
-                        </Card>
-                    </Link>
+                    <Card align="center" style={{width: '9rem'}}>
+
+                        <Card.Body>
+                            <Card.Img variant="top"
+                                      src={item.strTeamBadge}/>{' '}
+
+                        </Card.Body>
+                        <Link key={item.idTeam} to={{
+                            pathname: '/team',
+                            teamProps: {
+                                nameTeam: item.strTeam,
+                                idTeam: item.idTeam
+                            }
+                        }}>
+                            <FcExpand></FcExpand></Link>
+                    </Card>
                 </Col>
             </Figure>
         ))

@@ -1,18 +1,14 @@
 import React from "react";
-import {Button, Card, Col, Figure, ListGroup, Nav, Row, Spinner} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import {Col, Figure, Spinner} from "react-bootstrap";
 import LeagueCard from "./LeagueCard";
 
-
 export default class ListLeagueCard extends React.Component {
-
 
     state = {
         leagues: [],
         loading: true,
         idLeague: this.props.value
     };
-
 
     componentDidMount() {
 
@@ -26,7 +22,6 @@ export default class ListLeagueCard extends React.Component {
             });
     }
 
-
     render() {
 
         const {loading} = this.state;
@@ -37,7 +32,7 @@ export default class ListLeagueCard extends React.Component {
 
             <Figure key={item.idLeague}>
                 <Col xs="4">
-                    <LeagueCard  strLeague={item.strLeague} strCountry={item.strCountry}
+                    <LeagueCard strLeague={item.strLeague} strCountry={item.strCountry}
                                 strBadge={item.strBadge} idLeague={item.idLeague}></LeagueCard>
                 </Col>
             </Figure>
