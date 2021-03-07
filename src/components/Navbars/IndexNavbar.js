@@ -1,6 +1,7 @@
 import React from "react";
-import {Badge, Button, Image, Nav, Navbar, NavDropdown, Spinner} from "react-bootstrap";
+import {Button, Image, Nav, Navbar, NavDropdown, Spinner} from "react-bootstrap";
 import {FcManager} from "react-icons/all";
+import {Link} from "react-router-dom";
 
 export default class IndexNavbar extends React.Component {
     state = {
@@ -38,10 +39,16 @@ export default class IndexNavbar extends React.Component {
 
                 <Nav className="mr-auto">
                     {this.state.sports.map(item => (
-
-                        <Nav.Link key={item.strSport} href="/soccer"><Button
+                        <Link to={{
+                            pathname: "/"+item.strSport,
+                            leagueProps: {
+                                nameSport: item.strSport
+                            }
+                        }}>
+                        <Nav.Link key={item.strSport} href={"/"+item.strSport} ><Button
                             variant="outline-warning">{item.strSport}</Button>{' '}
                         </Nav.Link>
+                        </Link>
 
                     ))}
 

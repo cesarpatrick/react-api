@@ -11,17 +11,18 @@ export default class League extends React.Component {
 
     state = {
         idLeague: this.props.location.leagueProps.idLeague,
-        leagueName: this.props.location.leagueProps.leagueName
+        leagueName: this.props.location.leagueProps.leagueName,
+        nameSport: this.props.location.leagueProps.nameSport
     };
 
     render() {
         return (
-            <div id="soccerPage">
+            <div className="layoutPage">
                 <IndexNavbar></IndexNavbar>,
                 <Breadcrumb>
                     <Breadcrumb.Item href="/home">Home</Breadcrumb.Item>
-                    <Breadcrumb.Item href="/soccer">Soccer</Breadcrumb.Item>
-                    <Breadcrumb.Item href="/soccer" active>{this.state.leagueName}</Breadcrumb.Item>
+                    <Breadcrumb.Item href={"/"+this.state.nameSport} nameSport={this.state.nameSport}>{this.state.nameSport}</Breadcrumb.Item>
+                    <Breadcrumb.Item href="" active>{this.state.leagueName}</Breadcrumb.Item>
                 </Breadcrumb>,
 
                 <h2 className="pageTitle">{this.state.leagueName}</h2>
@@ -29,7 +30,7 @@ export default class League extends React.Component {
                 <LeagueDetails idLeague={this.state.idLeague}></LeagueDetails>
                 <br/>
                 <h2 className="pageTitle">Teams</h2>
-                <ListTeamCard leagueName={this.state.leagueName} idLeague={this.state.idLeague}></ListTeamCard>
+                <ListTeamCard nameSport={this.state.nameSport} leagueName={this.state.leagueName} idLeague={this.state.idLeague}></ListTeamCard>
                 <h2 className="pageTitle">Table</h2>
                 <LeagueTable idLeague={this.state.idLeague}></LeagueTable>
                 <h2 className="pageTitle">Last Events</h2>

@@ -36,3 +36,9 @@ code {
 .badge-warning#eventTextColor {
   color:black;
 }
+
+.layoutPage{
+  margin-left: 2%;
+  margin-right: 2%;
+}
+

@@ -1,5 +1,5 @@
 import React from "react";
-import {Breadcrumb, Card, OverlayTrigger, Tooltip} from "react-bootstrap";
+import {Card, OverlayTrigger, Tooltip} from "react-bootstrap";
 import {Link} from "react-router-dom";
 
 export default class LeagueCard extends React.Component {
@@ -8,7 +8,8 @@ export default class LeagueCard extends React.Component {
         idLeague: this.props.idLeague,
         strLeague: this.props.strLeague,
         strCountry: this.props.strCountry,
-        strBadge: this.props.strBadge
+        strBadge: this.props.strBadge,
+        nameSport: this.props.nameSport
     };
 
     render() {
@@ -22,7 +23,8 @@ export default class LeagueCard extends React.Component {
                 pathname: `/league`,
                 leagueProps: {
                     leagueName: this.state.strLeague,
-                    idLeague: this.state.idLeague
+                    idLeague: this.state.idLeague,
+                    nameSport: this.state.nameSport
                 }
             }}>
                 <OverlayTrigger

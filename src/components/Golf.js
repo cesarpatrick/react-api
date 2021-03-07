@@ -1,10 +1,10 @@
 import React from "react";
-import IndexFooter from "../Footers/IndexFooter";
-import IndexNavbar from "../Navbars/IndexNavbar";
 import {Breadcrumb, Container} from "react-bootstrap";
-import ListLeagueCard from "./League/ListLeagueCard";
+import IndexNavbar from "./Navbars/IndexNavbar";
+import IndexFooter from "./Footers/IndexFooter";
+import ListLeagueCard from "./Soccer/League/ListLeagueCard";
 
-export default class Soccer extends React.Component {
+export default class Golf extends React.Component {
 
     state = {
         leagues: [],
@@ -12,7 +12,7 @@ export default class Soccer extends React.Component {
     };
 
     componentDidMount() {
-        fetch('http://localhost:8080/api/league/allSoccerLeagues')
+        fetch('http://localhost:8080/api/league/allGolfLeagues')
             .then(res => res.json())
             .then(res => {
                 this.setState({
@@ -28,17 +28,16 @@ export default class Soccer extends React.Component {
                 <IndexNavbar></IndexNavbar>,
                 <Breadcrumb>
                     <Breadcrumb.Item href="/home">Home</Breadcrumb.Item>
-                    <Breadcrumb.Item href="/soccer" active>
-                        Soccer
+                    <Breadcrumb.Item href="/Golf" active>
+                        Golf
                     </Breadcrumb.Item>
                 </Breadcrumb>,
-                <Container fluid id="soccerPage">
-                    <h2 className="pageTitle">Soccer Leagues</h2>
+                <Container fluid>
+                    <h2 className="pageTitle">Golf Leagues</h2>
                     <br/>
 
                     {this.state.leagues.map(item => (
-                        <ListLeagueCard key={item.idLeague} value={item.idLeague} nameSport={item.strSport}></ListLeagueCard>
-
+                        <ListLeagueCard  key={item.idLeague} value={item.idLeague} nameSport={item.strSport}/>
                     ))}
 
                 </Container>,

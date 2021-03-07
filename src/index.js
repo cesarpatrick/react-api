@@ -12,6 +12,13 @@ import Soccer from "./components/Soccer/Soccer";
 import SoccerTeam from "./components/Soccer/SoccerTeam";
 import League from "./components/Soccer/League/League";
 import Team from "./components/Soccer/Team/Team";
+import MotorSports from "./components/MotorSports";
+import Fighting from "./components/Fighting";
+import AmericanFootball from "./components/AmericanFootball";
+import Baseball from "./components/Baseball";
+import IceHockey from "./components/IceHockey";
+import Golf from "./components/Golf";
+import Basketball from "./components/Basketball";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -23,6 +30,13 @@ ReactDOM.render(
               <Route path="/soccerTeam" component={SoccerTeam} />
               <Route path="/league" component={League} />
               <Route path="/team" component={Team} />
+              <Route path="/Motorsport" component={MotorSports} />
+              <Route path="/Fighting" component={Fighting} />
+              <Route path="/American Football" component={AmericanFootball} />
+              <Route path="/Baseball" component={Baseball} />
+              <Route path="/Ice Hockey" component={IceHockey} />
+              <Route path="/Golf" component={Golf} />
+              <Route path="/Basketball" component={Basketball} />
           </Switch>
       </BrowserRouter>
   </React.StrictMode>,

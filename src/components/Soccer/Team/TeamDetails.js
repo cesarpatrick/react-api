@@ -34,14 +34,14 @@ export default class TeamDetails extends React.Component {
                 </Col>
                 <br/>
                 <span className="pageTitle">{item.strDescriptionEN}</span>
-                <h2 className="pageTitle">Stadium {item.strStadium}</h2>
+                <h2 className="pageTitle">{item.strStadium}</h2>
                 <Col>
                     <Image style={{width: '100%'}} src={item.strStadiumThumb}></Image>
                 </Col>
                 <br/>
                 <span className="pageTitle">{item.strStadiumDescription}</span>
                 <br/><br/>
-                <h2 className="pageTitle">Jersey</h2>
+                <h2 className="pageTitle">Equipament</h2>
                 <TeamJersey idTeam={this.state.idTeam}></TeamJersey>
                 <br/>
                 <br/>

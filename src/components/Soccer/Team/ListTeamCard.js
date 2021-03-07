@@ -1,7 +1,6 @@
 import React from "react";
 import {Card, Col, Figure, Spinner} from "react-bootstrap";
 import {Link} from "react-router-dom";
-import {FcExpand} from "react-icons/all";
 
 export default class ListTeamCard extends React.Component {
 
@@ -9,7 +8,8 @@ export default class ListTeamCard extends React.Component {
         teams: [],
         loading: true,
         idLeague: this.props.idLeague,
-        leagueName: this.props.leagueName
+        leagueName: this.props.leagueName,
+        nameSport: this.props.nameSport
     };
 
     componentDidMount() {
@@ -30,7 +30,7 @@ export default class ListTeamCard extends React.Component {
 
         if (loading) return <Spinner animation="border"/>;
 
-        return this.state.teams.map(item => (
+        if(this.state.teams != null) return this.state.teams.map(item => (
             <Figure>
                 <Col xs="4">
                     <Link key={item.idTeam} to={{
@@ -39,7 +39,8 @@ export default class ListTeamCard extends React.Component {
                             nameTeam: item.strTeam,
                             idTeam: item.idTeam,
                             leagueName: this.state.leagueName,
-                            idLeague: this.state.idLeague
+                            idLeague: this.state.idLeague,
+                            nameSport: this.state.nameSport
                         }
                     }}>
                         <Card align="center" style={{width: '9rem'}}>
@@ -55,5 +56,6 @@ export default class ListTeamCard extends React.Component {
             </Figure>
         ))
 
+        return <span></span>
     }
 }

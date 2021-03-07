@@ -1,5 +1,5 @@
 import React from "react";
-import {Badge, Button, Col, Nav, Navbar, Row} from "react-bootstrap";
+import {Badge, Col,Row} from "react-bootstrap";
 import {Container} from "reactstrap";
 
 export default class IndexFooter extends React.Component {
