@@ -1,7 +1,7 @@
 import React from "react";
 import IndexFooter from "../Footers/IndexFooter";
 import IndexNavbar from "../Navbars/IndexNavbar";
-import {Container} from "react-bootstrap";
+import {Breadcrumb, Container} from "react-bootstrap";
 import ListLeagueCard from "./League/ListLeagueCard";
 
 export default class Soccer extends React.Component {
@@ -24,10 +24,15 @@ export default class Soccer extends React.Component {
 
     render() {
         return (
-            <div id="soccerPage">
+            <div>
                 <IndexNavbar></IndexNavbar>,
-
-                <Container fluid>
+                <Breadcrumb>
+                    <Breadcrumb.Item href="/home">Home</Breadcrumb.Item>
+                    <Breadcrumb.Item href="/soccer" active>
+                        Soccer
+                    </Breadcrumb.Item>
+                </Breadcrumb>,
+                <Container fluid id="soccerPage">
                     <h2 className="pageTitle">Soccer Leagues</h2>
                     <br/>
 

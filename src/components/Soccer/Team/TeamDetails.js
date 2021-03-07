@@ -30,7 +30,7 @@ export default class TeamDetails extends React.Component {
         return this.state.teams.map(item => (
             <div key={item.idTeam}>
                 <Col>
-                    <Image src={item.strTeamBanner} style={{width: '100%'}}></Image>
+                     <Image src={item.strTeamBanner} style={{width: '100%'}}></Image>
                 </Col>
                 <br/>
                 <span className="pageTitle">{item.strDescriptionEN}</span>

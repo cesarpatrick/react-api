@@ -1,5 +1,5 @@
 import React from "react";
-import {Card, OverlayTrigger, Tooltip} from "react-bootstrap";
+import {Breadcrumb, Card, OverlayTrigger, Tooltip} from "react-bootstrap";
 import {Link} from "react-router-dom";
 
 export default class LeagueCard extends React.Component {
@@ -30,7 +30,7 @@ export default class LeagueCard extends React.Component {
                     delay={{show: 250, hide: 400}}
                     overlay={renderTooltip}
                 >
-                    <Card align="center" style={{width: '18rem'}}>
+                    <Card align="center" style={{width: '12rem'}}>
                         <Card.Body>
                             <Card.Img variant="top"
                                       src={this.state.strBadge}/>

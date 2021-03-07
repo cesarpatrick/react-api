@@ -23,28 +23,27 @@ export default class LeagueTable extends React.Component {
     render() {
 
         const {loading} = this.state;
-
         if (loading) return <Spinner animation="border"/>;
-        return<div>
-                <Table responsive>
-                    <thead>
-                    <tr className="eventTitleCenter">
-                        <th>Position</th>
-                        <th></th>
-                        <th>Club</th>
-                        <th>Played</th>
-                        <th>Won</th>
-                        <th>Drawn</th>
-                        <th>Lost</th>
-                        <th>GF</th>
-                        <th>GA</th>
-                        <th>GD</th>
-                        <th>Points</th>
+        if (this.state.table.length > 0) return <div>
+            <Table responsive>
+                <thead>
+                <tr className="eventTitleCenter">
+                    <th>Position</th>
+                    <th></th>
+                    <th>Club</th>
+                    <th>Played</th>
+                    <th>Won</th>
+                    <th>Drawn</th>
+                    <th>Lost</th>
+                    <th>GF</th>
+                    <th>GA</th>
+                    <th>GD</th>
+                    <th>Points</th>
 
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {this.state.table.map(item => (
+                </tr>
+                </thead>
+                <tbody>
+                {this.state.table.map(item => (
 
                     <tr key={item.idTeam} className="eventTitleCenter">
                         <td>{item.intRank}</td>
@@ -59,12 +58,12 @@ export default class LeagueTable extends React.Component {
                         <td>{item.intGoalDifference}</td>
                         <td>{item.intPoints}</td>
                     </tr>
-                   ))}
-                    </tbody>
-                </Table>
-            </div>
+                ))}
+                </tbody>
+            </Table>
+        </div>
 
-
+        return <span>The table is not available for this league.</span>;
 
     }
 }

@@ -29,6 +29,6 @@ export default class TeamJersey extends React.Component {
             ))
         }
 
-        return <span>Jerseys a not avaible for this club.</span>;
+        return <span>Jerseys a not available for this club.</span>;
     }
 }

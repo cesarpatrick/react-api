@@ -26,6 +26,9 @@ export default class LastEvents extends React.Component {
         const {loading} = this.state;
 
         if (loading) return <Spinner animation="border"/>;
+
+        if(this.state.events == null || this.state.events.length == 0) return <span>There is not informations available about the last events for this league.</span>;
+
         return this.state.events.map(item => (
             <div key={item.idEvent}>
                 <Container>

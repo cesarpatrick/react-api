@@ -8,7 +8,8 @@ export default class ListTeamCard extends React.Component {
     state = {
         teams: [],
         loading: true,
-        idLeague: this.props.idLeague
+        idLeague: this.props.idLeague,
+        leagueName: this.props.leagueName
     };
 
     componentDidMount() {
@@ -32,22 +33,24 @@ export default class ListTeamCard extends React.Component {
         return this.state.teams.map(item => (
             <Figure>
                 <Col xs="4">
-                    <Card align="center" style={{width: '9rem'}}>
+                    <Link key={item.idTeam} to={{
+                        pathname: '/team',
+                        teamProps: {
+                            nameTeam: item.strTeam,
+                            idTeam: item.idTeam,
+                            leagueName: this.state.leagueName,
+                            idLeague: this.state.idLeague
+                        }
+                    }}>
+                        <Card align="center" style={{width: '9rem'}}>
 
-                        <Card.Body>
-                            <Card.Img variant="top"
-                                      src={item.strTeamBadge}/>{' '}
+                            <Card.Body>
+                                <Card.Img variant="top"
+                                          src={item.strTeamBadge}/>{' '}
 
-                        </Card.Body>
-                        <Link key={item.idTeam} to={{
-                            pathname: '/team',
-                            teamProps: {
-                                nameTeam: item.strTeam,
-                                idTeam: item.idTeam
-                            }
-                        }}>
-                            <FcExpand></FcExpand></Link>
-                    </Card>
+                            </Card.Body>
+                        </Card>
+                    </Link>
                 </Col>
             </Figure>
         ))

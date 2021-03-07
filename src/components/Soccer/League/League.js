@@ -5,6 +5,7 @@ import ListTeamCard from "../Team/ListTeamCard";
 import LeagueDetails from "./LeagueDetails";
 import LastEvents from "./LeagueLastEvents";
 import LeagueTable from "./LeagueTable";
+import {Breadcrumb} from "react-bootstrap";
 
 export default class League extends React.Component {
 
@@ -17,6 +18,11 @@ export default class League extends React.Component {
         return (
             <div id="soccerPage">
                 <IndexNavbar></IndexNavbar>,
+                <Breadcrumb>
+                    <Breadcrumb.Item href="/home">Home</Breadcrumb.Item>
+                    <Breadcrumb.Item href="/soccer">Soccer</Breadcrumb.Item>
+                    <Breadcrumb.Item href="/soccer" active>{this.state.leagueName}</Breadcrumb.Item>
+                </Breadcrumb>,
 
                 <h2 className="pageTitle">{this.state.leagueName}</h2>
                 <br/>
