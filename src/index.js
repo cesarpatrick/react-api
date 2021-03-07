@@ -19,6 +19,9 @@ import Baseball from "./components/Baseball";
 import IceHockey from "./components/IceHockey";
 import Golf from "./components/Golf";
 import Basketball from "./components/Basketball";
+import Rugby from "./components/Rugby";
+import Cricket from "./components/Cricket";
+import Tennis from "./components/Tennis";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -37,6 +40,9 @@ ReactDOM.render(
               <Route path="/Ice Hockey" component={IceHockey} />
               <Route path="/Golf" component={Golf} />
               <Route path="/Basketball" component={Basketball} />
+              <Route path="/Rugby" component={Rugby} />
+              <Route path="/Tennis" component={Tennis} />
+              <Route path="/Cricket" component={Cricket} />
           </Switch>
       </BrowserRouter>
   </React.StrictMode>,

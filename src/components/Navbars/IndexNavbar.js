@@ -14,7 +14,7 @@ export default class IndexNavbar extends React.Component {
             .then(res => res.json())
             .then(res => {
                 this.setState({
-                    sports: res.sports.slice(0, 8),
+                    sports: res.sports.slice(0, 11),
                     loading: false
                 });
             });
