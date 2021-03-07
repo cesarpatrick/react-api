@@ -12,7 +12,7 @@ export default class Fighting extends React.Component {
     };
 
     componentDidMount() {
-        fetch('http://localhost:8080/api/league/allFightingLeagues')
+        fetch('http://localhost:8080/api/league/Fighting')
             .then(res => res.json())
             .then(res => {
                 this.setState({

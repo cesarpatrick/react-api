@@ -12,7 +12,7 @@ export default class AmericanFootball extends React.Component {
     };
 
     componentDidMount() {
-        fetch('http://localhost:8080/api/league/allAmericanFootballLeagues')
+        fetch('http://localhost:8080/api/league/American Football')
             .then(res => res.json())
             .then(res => {
                 this.setState({

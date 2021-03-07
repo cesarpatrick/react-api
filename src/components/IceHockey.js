@@ -12,7 +12,7 @@ export default class IceHockey extends React.Component {
     };
 
     componentDidMount() {
-        fetch('http://localhost:8080/api/league/allIceHockeyLeagues')
+        fetch('http://localhost:8080/api/league/Ice Hockey')
             .then(res => res.json())
             .then(res => {
                 this.setState({

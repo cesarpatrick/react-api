@@ -12,7 +12,7 @@ export default class Soccer extends React.Component {
     };
 
     componentDidMount() {
-        fetch('http://localhost:8080/api/league/allSoccerLeagues')
+        fetch('http://localhost:8080/api/league/Soccer')
             .then(res => res.json())
             .then(res => {
                 this.setState({

@@ -12,7 +12,7 @@ export default class Basketball extends React.Component {
     };
 
     componentDidMount() {
-        fetch('http://localhost:8080/api/league/allBasketballLeagues')
+        fetch('http://localhost:8080/api/league/Basketball')
             .then(res => res.json())
             .then(res => {
                 this.setState({

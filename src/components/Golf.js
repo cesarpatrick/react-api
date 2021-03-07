@@ -12,7 +12,7 @@ export default class Golf extends React.Component {
     };
 
     componentDidMount() {
-        fetch('http://localhost:8080/api/league/allGolfLeagues')
+        fetch('http://localhost:8080/api/league/Golf')
             .then(res => res.json())
             .then(res => {
                 this.setState({

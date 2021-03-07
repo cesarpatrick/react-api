@@ -12,7 +12,7 @@ export default class MotorSports extends React.Component {
     };
 
     componentDidMount() {
-        fetch('http://localhost:8080/api/league/allMotorSportsLeagues')
+        fetch('http://localhost:8080/api/league/Motorsport')
             .then(res => res.json())
             .then(res => {
                 this.setState({
