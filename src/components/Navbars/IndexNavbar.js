@@ -1,13 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import {Button, Image, Nav, Navbar, NavDropdown, Spinner} from "react-bootstrap";
-import {FcManager} from "react-icons/all";
 import {Link} from "react-router-dom";
+import {VscAccount} from "react-icons/all";
 
 export default class IndexNavbar extends React.Component {
+
     state = {
         sports: [],
-        loading: true
+        loading: true,
+        open: false
     };
+
+
 
     componentDidMount() {
         fetch('https://www.thesportsdb.com/api/v1/json/1/all_sports.php')
@@ -15,11 +19,10 @@ export default class IndexNavbar extends React.Component {
             .then(res => {
                 this.setState({
                     sports: res.sports.slice(0, 11),
-                    loading: false
+                    loading: false,
                 });
             });
     }
-
 
     render() {
 
@@ -27,38 +30,43 @@ export default class IndexNavbar extends React.Component {
 
         if (loading) return <Spinner animation="border"/>;
 
-        return <Navbar collapseOnSelect bg="dark" expand="lg">
-            <Navbar.Brand href="#home">
-                <Image
-                    src="https://64.media.tumblr.com/e4c00bb9486d6c9edc0b053b0d143277/bdda942d8619c323-b0/s250x400/d486b10f11a93f288c604d5f42281584cffdf23a.png"
-                    rounded="true"></Image>
-            </Navbar.Brand>
+        return <Navbar bg="dark" expand="lg"  collapseOnSelect >
+            <Navbar.Brand href="#home">Sportswiki</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-            <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav.Link href="/home"><Button variant="warning">Home</Button>{' '}</Nav.Link>
+            <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="mr-auto navbar-expand-x1" activeKey="1">
 
-                <Nav className="mr-auto">
+                    <Nav.Link key={"fav"} href={"/home"} eventKey="1"><Button
+                        variant="outline-warning">Home</Button>{' '}
+                    </Nav.Link>
+
                     {this.state.sports.map(item => (
                         <Link to={{
-                            pathname: "/"+item.strSport,
+                            pathname: "/" + item.strSport,
                             leagueProps: {
                                 nameSport: item.strSport
                             }
                         }}>
-                        <Nav.Link key={item.strSport} href={"/"+item.strSport} ><Button
-                            variant="outline-warning">{item.strSport}</Button>{' '}
-                        </Nav.Link>
+                            <Nav.Link eventKey="14" key={item.strSport} href={"/" + item.strSport}><Button
+                                variant="outline-warning">{item.strSport}</Button>{' '}
+                            </Nav.Link>
                         </Link>
 
                     ))}
-
-                    <NavDropdown title={<span id="userMenu"><FcManager ></FcManager></span>} id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">Add New User</NavDropdown.Item>
-                        <NavDropdown.Divider/>
-                        <NavDropdown.Item href="#action/3.4">Log off</NavDropdown.Item>
+                    <Nav.Link key={"fav"} href={"/"}><Button
+                        variant="outline-warning">Favourites</Button>{' '}
+                    </Nav.Link>
+                </Nav>
+                <Nav>
+                    <NavDropdown title={<VscAccount></VscAccount>} className="userMenu" id="collasible-nav-dropdown">
+                        <NavDropdown.Item href="#action/3.1">New</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.2">Edit</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.4">Log Out</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
+
             </Navbar.Collapse>
+
         </Navbar>
     }
 

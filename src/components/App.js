@@ -18,30 +18,17 @@ export default class App extends React.Component {
                         <Carousel slide={false}>
                             <Carousel.Item>
                                 <Image
-                                    src="https://webunwto.s3.eu-west-1.amazonaws.com/2020-01/sport-congresse.jpg"/>
-
-                                <Carousel.Caption>
-                                    <h3>First slide label</h3>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                </Carousel.Caption>
+                                    src="https://specials-images.forbesimg.com/imageserve/5ed00ae6b8da090007a77b74/x.jpg"/>
                             </Carousel.Item>
                             <Carousel.Item slide="false">
                                 <Image
-                                    src="https://webunwto.s3.eu-west-1.amazonaws.com/2020-01/sport-congresse.jpg"/>
+                                    src="https://thumbor.forbes.com/thumbor/1920x1080/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F60105eea27a5e0ffbf1a07e8%2F0x0.jpg%3Ffit%3Dscale"/>
 
-                                <Carousel.Caption>
-                                    <h3>Second slide label</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
                                 <Image
-                                    src="https://webunwto.s3.eu-west-1.amazonaws.com/2020-01/sport-congresse.jpg"/>
+                                    src="https://thumbor.forbes.com/thumbor/2863x1611/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F6022b43d9520bde9a34ed716%2F0x0.jpg%3Ffit%3Dscale"/>
 
-                                <Carousel.Caption>
-                                    <h3>Serena the champion !</h3>
-                                    <p>Serena Willians won another gran slan.</p>
-                                </Carousel.Caption>
                             </Carousel.Item>
                         </Carousel>
 

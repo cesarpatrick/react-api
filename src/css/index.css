@@ -29,8 +29,9 @@ code {
   color: #F0C659;
   text-align: center;
 }
-#userMenu{
+#collasible-nav-dropdown{
   font-size: 200%;
+  color: #F0C659;
 }
 
 .badge-warning#eventTextColor {

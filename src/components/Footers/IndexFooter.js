@@ -25,7 +25,7 @@ export default class IndexFooter extends React.Component {
                             <Col xs={3} md={2}>
                             </Col>
                             <Col xs={3} md={2}>
-                                <Badge variant="secondary">https://www.thesportsdb.com</Badge>
+                                <Badge variant="secondary">Developed by Cesar Gouveia</Badge>
                             </Col>
                         </Row>
                     </Container>
