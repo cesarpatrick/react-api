@@ -22,13 +22,15 @@ import Basketball from "./components/Basketball";
 import Rugby from "./components/Rugby";
 import Cricket from "./components/Cricket";
 import Tennis from "./components/Tennis";
+import HomePage from "./components/HomePage";
+import UserNew from "./components/User/UserNew";
 
 ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
           <Switch>
               <Route path="/" exact component={App} />
-              <Route path="/home" exact component={App} />
+              <Route path="/home" exact component={HomePage} />
               <Route path="/Soccer" component={Soccer} />
               <Route path="/soccerTeam" component={SoccerTeam} />
               <Route path="/league" component={League} />
@@ -43,6 +45,8 @@ ReactDOM.render(
               <Route path="/Rugby" component={Rugby} />
               <Route path="/Tennis" component={Tennis} />
               <Route path="/Cricket" component={Cricket} />
+              <Route path="/Cricket" component={Cricket} />
+              <Route path="/user/new" component={UserNew} />
           </Switch>
       </BrowserRouter>
   </React.StrictMode>,

@@ -27,7 +27,8 @@ export default class Team extends React.Component {
                         pathname: `/league`,
                         leagueProps: {
                             leagueName: this.state.leagueName,
-                            idLeague: this.state.idLeague
+                            idLeague: this.state.idLeague,
+                            nameSport: this.props.location.teamProps.nameSport
                         }
                     }}>{this.state.leagueName}</Link></Breadcrumb.Item>
                     <Breadcrumb.Item href="" active>{this.state.teamName}</Breadcrumb.Item>

@@ -1,6 +1,7 @@
 import React from "react";
-import {Card, OverlayTrigger, Tooltip} from "react-bootstrap";
+import {Alert, Button, Card, OverlayTrigger, Tooltip} from "react-bootstrap";
 import {Link} from "react-router-dom";
+import {BsHeartFill} from "react-icons/all";
 
 export default class LeagueCard extends React.Component {
 
@@ -19,28 +20,30 @@ export default class LeagueCard extends React.Component {
             </Tooltip>
         );
 
-        return (<Link to={{
-                pathname: `/league`,
-                leagueProps: {
-                    leagueName: this.state.strLeague,
-                    idLeague: this.state.idLeague,
-                    nameSport: this.state.nameSport
-                }
-            }}>
+        return (
+            <Card align="center" style={{width: '12rem'}}>
                 <OverlayTrigger
                     placement="right"
                     delay={{show: 250, hide: 400}}
                     overlay={renderTooltip}
                 >
-                    <Card align="center" style={{width: '12rem'}}>
+                    <Link to={{
+                        pathname: `/league`,
+                        leagueProps: {
+                            leagueName: this.state.strLeague,
+                            idLeague: this.state.idLeague,
+                            nameSport: this.state.nameSport
+                        }
+                    }}>
                         <Card.Body>
                             <Card.Img variant="top"
                                       src={this.state.strBadge}/>
-
                         </Card.Body>
-                    </Card>
+                    </Link>
                 </OverlayTrigger>
-            </Link>
+                <Button variant="outline-warning" block><span><BsHeartFill></BsHeartFill></span></Button>
+
+            </Card>
         )
     }
 }

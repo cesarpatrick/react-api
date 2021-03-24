@@ -14,11 +14,17 @@ export default class LeagueTable extends React.Component {
             .then(res => res.json())
             .then(res => {
                 this.setState({
-                    table: res.table,
+                    table: res.table.sort(function(a,b){
+                        return parseInt(a.intRank)  - parseInt(b.intRank);
+                    }),
                     loading: false
+
                 });
             });
+
     }
+
+
 
     render() {
 
@@ -43,6 +49,7 @@ export default class LeagueTable extends React.Component {
                 </tr>
                 </thead>
                 <tbody>
+
                 {this.state.table.map(item => (
 
                     <tr key={item.idTeam} className="eventTitleCenter">
