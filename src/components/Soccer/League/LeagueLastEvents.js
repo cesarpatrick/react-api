@@ -15,7 +15,9 @@ export default class LastEvents extends React.Component {
             .then(res => res.json())
             .then(res => {
                 this.setState({
-                    events: res.events,
+                    events: res.events.sort(function(a,b){
+                        return parseInt(a.dateEventLocal)  - parseInt(b.dateEventLocal);
+                    }),
                     loading: false
                 });
             });

@@ -61,7 +61,7 @@ export default class IndexNavbar extends React.Component {
                     <NavDropdown title={<VscAccount></VscAccount>} className="userMenu" id="collasible-nav-dropdown">
                         <NavDropdown.Item href="/user/new">New</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">Edit</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.4">Log Out</NavDropdown.Item>
+                        <NavDropdown.Item href="/">Log Out</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
 

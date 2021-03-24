@@ -3,6 +3,7 @@ import {Breadcrumb, Container} from "react-bootstrap";
 import IndexNavbar from "./Navbars/IndexNavbar";
 import IndexFooter from "./Footers/IndexFooter";
 import ListLeagueCard from "./Soccer/League/ListLeagueCard";
+import {GiAmericanFootballHelmet} from "react-icons/all";
 
 export default class AmericanFootball extends React.Component {
 
@@ -33,7 +34,7 @@ export default class AmericanFootball extends React.Component {
                     </Breadcrumb.Item>
                 </Breadcrumb>,
                 <Container fluid>
-                    <h2 className="pageTitle">American Football Leagues</h2>
+                    <h2 className="pageTitle"><GiAmericanFootballHelmet></GiAmericanFootballHelmet> American Football Leagues</h2>
                     <br/>
 
                     {this.state.leagues.map(item => (

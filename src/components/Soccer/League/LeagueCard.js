@@ -43,6 +43,7 @@ export default class LeagueCard extends React.Component {
                 </OverlayTrigger>
                 <Button variant="outline-warning" block><span><BsHeartFill></BsHeartFill></span></Button>
 
+
             </Card>
         )
     }

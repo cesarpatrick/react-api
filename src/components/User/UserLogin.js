@@ -35,15 +35,12 @@ export default class UserLogin extends React.Component {
     render() {
 
         return (
-            <div className="pageTitle" className="userFrom">
+            <div className="userFrom">
 
-                <Form onSubmit={this.mySubmitHandler}>
+                <Form className="pageTitle" onSubmit={this.mySubmitHandler}>
                     <Form.Group controlId="formBasicLogin">
                         <Form.Label>Email address</Form.Label>
                         <Form.Control name="login" type="text" placeholder="Enter login" onChange={this.handleChange}/>
-                        <Form.Text className="text-muted">
-                            We'll never share your email with anyone else.
-                        </Form.Text>
                     </Form.Group>
 
                     <Form.Group controlId="formBasicPassword">

@@ -3,6 +3,7 @@ import IndexFooter from "../Footers/IndexFooter";
 import IndexNavbar from "../Navbars/IndexNavbar";
 import {Breadcrumb, Container} from "react-bootstrap";
 import ListLeagueCard from "./League/ListLeagueCard";
+import {GiSoccerBall} from "react-icons/all";
 
 export default class Soccer extends React.Component {
 
@@ -33,7 +34,7 @@ export default class Soccer extends React.Component {
                     </Breadcrumb.Item>
                 </Breadcrumb>,
                 <Container fluid id="soccerPage">
-                    <h2 className="pageTitle">Soccer Leagues</h2>
+                    <h2 className="pageTitle"><GiSoccerBall></GiSoccerBall> Soccer Leagues</h2>
                     <br/>
 
                     {this.state.leagues.map(item => (

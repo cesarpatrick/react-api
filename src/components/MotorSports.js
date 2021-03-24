@@ -3,6 +3,7 @@ import {Breadcrumb, Container} from "react-bootstrap";
 import IndexNavbar from "./Navbars/IndexNavbar";
 import IndexFooter from "./Footers/IndexFooter";
 import ListLeagueCard from "./Soccer/League/ListLeagueCard";
+import {FaCar} from "react-icons/all";
 
 export default class MotorSports extends React.Component {
 
@@ -33,7 +34,7 @@ export default class MotorSports extends React.Component {
                     </Breadcrumb.Item>
                 </Breadcrumb>,
                 <Container fluid>
-                    <h2 className="pageTitle">Motor Sports Leagues</h2>
+                    <h2 className="pageTitle"><FaCar></FaCar> Motor Sports Leagues</h2>
                     <br/>
 
                     {this.state.leagues.map(item => (
