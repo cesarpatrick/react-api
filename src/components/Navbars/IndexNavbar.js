@@ -31,7 +31,6 @@ export default class IndexNavbar extends React.Component {
         if (loading) return <Spinner animation="border"/>;
 
         return <Navbar bg="dark" expand="lg"  collapseOnSelect >
-            <Navbar.Brand href="/home">Sportswiki</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto navbar-expand-x1" activeKey="1">
@@ -56,14 +55,14 @@ export default class IndexNavbar extends React.Component {
                     <Nav.Link key={"fav"} href={"/"}><Button
                         variant="outline-warning">Favourites</Button>{' '}
                     </Nav.Link>
-                </Nav>
-                <Nav>
+
                     <NavDropdown title={<VscAccount></VscAccount>} className="userMenu" id="collasible-nav-dropdown">
                         <NavDropdown.Item href="/user/new">New</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">Edit</NavDropdown.Item>
                         <NavDropdown.Item href="/">Log Out</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
+
 
             </Navbar.Collapse>
 

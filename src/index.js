@@ -24,6 +24,8 @@ import Cricket from "./components/Cricket";
 import Tennis from "./components/Tennis";
 import HomePage from "./components/HomePage";
 import UserNew from "./components/User/UserNew";
+import NoMatch from "./components/System/NoMatch";
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -47,6 +49,7 @@ ReactDOM.render(
               <Route path="/Cricket" component={Cricket} />
               <Route path="/Cricket" component={Cricket} />
               <Route path="/user/new" component={UserNew} />
+              <Route component={NoMatch}/>
           </Switch>
       </BrowserRouter>
   </React.StrictMode>,
