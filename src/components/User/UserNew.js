@@ -4,6 +4,7 @@ import {Button, Form} from "react-bootstrap";
 import IndexNavbar from "../Navbars/IndexNavbar";
 import IndexFooter from "../Footers/IndexFooter";
 
+
 export default class UserNew extends React.Component {
 
     state = {
@@ -13,7 +14,7 @@ export default class UserNew extends React.Component {
         username: "",
         name:"",
         errorMessage: '',
-        sucessMessage: ''
+        successMessage: ''
 
     };
 
@@ -40,17 +41,17 @@ export default class UserNew extends React.Component {
           .then(data => {
 
                 if (data.message ==='User registered successfully!'){
-                    this.state.sucess = true;
+                    this.state.success = true;
                     this.state.email = '';
                     this.state.password = '';
                     this.state.name = '';
                     this.state.username= '';
 
                     document.getElementById("singup-form").reset();
-                    this.setState({sucessMessage: data.message});
+                    this.setState({successMessage: data.message});
                     this.setState({errorMessage: ''});
                 }else{
-                    this.setState({sucessMessage: ''});
+                    this.setState({successMessage: ''});
                     this.setState({errorMessage: data.message});
                 }
 
@@ -67,8 +68,8 @@ export default class UserNew extends React.Component {
                 <Form className="userFrom" id="singup-form">
                     { this.state.errorMessage &&
                     <h5 className="fade alert alert-danger show"> { this.state.errorMessage } </h5>}
-                    { this.state.sucessMessage &&
-                    <h5 className="fade alert alert-success show"> { this.state.sucessMessage } </h5>}
+                    { this.state.successMessage &&
+                    <h5 className="fade alert alert-success show"> { this.state.successMessage } </h5>}
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Name</Form.Label>
                         <Form.Control name="name" type="text" placeholder="Name" onChange={this.handleChange} required/>

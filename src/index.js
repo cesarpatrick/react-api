@@ -25,13 +25,15 @@ import Tennis from "./components/Tennis";
 import HomePage from "./components/HomePage";
 import UserNew from "./components/User/UserNew";
 import NoMatch from "./components/System/NoMatch";
-
+import UserLogin from "./components/User/UserLogin";
+import { browserHistory } from 'react-router';
+import Favourites from "./components/Favourites";
 
 ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
           <Switch>
-              <Route path="/" exact component={App} />
+              <Route path="/" exact component={App} render={(routeProps) => <UserLogin {...routeProps}/>} />
               <Route path="/home" exact component={HomePage} />
               <Route path="/Soccer" component={Soccer} />
               <Route path="/soccerTeam" component={SoccerTeam} />
@@ -49,6 +51,7 @@ ReactDOM.render(
               <Route path="/Cricket" component={Cricket} />
               <Route path="/Cricket" component={Cricket} />
               <Route path="/user/new" component={UserNew} />
+              <Route path="/favourites" component={Favourites} />
               <Route component={NoMatch}/>
           </Switch>
       </BrowserRouter>

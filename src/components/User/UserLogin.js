@@ -1,13 +1,18 @@
 import React from "react";
-import {Button, Form, Image, Modal} from "react-bootstrap";
+import {Button, Form, Image} from "react-bootstrap";
 
 export default class UserLogin extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
 
     state = {
         user: [],
         username: "",
         password: "",
-        errorMessage: ""
+        errorMessage: "",
+        loggedIn: true
     };
 
     handleChange = (e) => {
@@ -16,10 +21,7 @@ export default class UserLogin extends React.Component {
         })
     };
 
-
-
-    signUp = () =>{
-
+    signIn = () =>{
         fetch("http://localhost:8080/api/auth/signin", {
             method: 'post',
             headers: {'Accept': 'application/json',
@@ -29,9 +31,12 @@ export default class UserLogin extends React.Component {
                 password: this.state.password
             }),
         }).then(response => response.json()).then(data => {
-            console.log(data);
             this.setState({errorMessage: data.message});
             document.getElementById("singin-form").reset();
+
+            if(data.id){
+                this.props.history.push("/home");
+            }
         })
     }
 
@@ -57,7 +62,7 @@ export default class UserLogin extends React.Component {
                                     </Form.Group>
 
                                     <Form.Group>
-                                        <Button variant="primary" size="lg" onClick={this.signUp} block>Sign in</Button>
+                                        <Button variant="primary" size="lg" onClick={this.signIn} block>Sign in</Button>
                                     </Form.Group>
                                     { this.state.errorMessage &&
                                     <h5 className="fade alert alert-danger show"> { this.state.errorMessage } </h5>}

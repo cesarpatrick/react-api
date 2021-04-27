@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {Button, Image, Nav, Navbar, NavDropdown, Spinner} from "react-bootstrap";
+import React from "react";
+import {Button, Nav, Navbar, NavDropdown, Spinner} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {VscAccount} from "react-icons/all";
 
@@ -43,7 +43,8 @@ export default class IndexNavbar extends React.Component {
                         <Link to={{
                             pathname: "/" + item.strSport,
                             leagueProps: {
-                                nameSport: item.strSport
+                                nameSport: item.strSport,
+                                jwt: this.state.jwt
                             }
                         }}>
                             <Nav.Link eventKey="14" key={item.strSport} href={"/" + item.strSport}><Button
@@ -52,9 +53,16 @@ export default class IndexNavbar extends React.Component {
                         </Link>
 
                     ))}
-                    <Nav.Link key={"fav"} href={"/"}><Button
-                        variant="outline-warning">Favourites</Button>{' '}
-                    </Nav.Link>
+                    <Link to={{
+                        pathname: "/favourites",
+                        favouriteProps: {
+                            isFavourite: true
+                        }
+                    }}>
+                        <Nav.Link key={"fav"} href={"/favourites"}><Button
+                            variant="outline-warning">Favourites</Button>{' '}
+                        </Nav.Link>
+                    </Link>
 
                     <NavDropdown title={<VscAccount></VscAccount>} className="userMenu" id="collasible-nav-dropdown">
                         <NavDropdown.Item href="/user/new">New</NavDropdown.Item>

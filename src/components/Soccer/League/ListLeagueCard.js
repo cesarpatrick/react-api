@@ -8,7 +8,8 @@ export default class ListLeagueCard extends React.Component {
         leagues: [],
         loading: true,
         idLeague: this.props.value,
-        nameSport: this.props.nameSport
+        isFavourite: this.props.isFavourite,
+        nameSport: this.props.nameSport,
     };
 
     componentDidMount() {
@@ -33,8 +34,8 @@ export default class ListLeagueCard extends React.Component {
 
             <Figure key={item.idLeague}>
                 <Col xs="4">
-                    <LeagueCard nameSport={this.state.nameSport} strLeague={item.strLeague} strCountry={item.strCountry}
-                                strBadge={item.strBadge} idLeague={item.idLeague}></LeagueCard>
+                    <LeagueCard  isFavourite={this.state.isFavourite} nameSport={this.state.nameSport} strLeague={item.strLeague} strCountry={item.strCountry}
+                                strBadge={item.strBadge} idLeague={item.idLeague} ></LeagueCard>
                 </Col>
             </Figure>
         ))

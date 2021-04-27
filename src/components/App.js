@@ -1,6 +1,6 @@
 import React from "react";
 import IndexFooter from "./Footers/IndexFooter";
-import {Col, Container, Navbar} from "react-bootstrap";
+import {Navbar} from "react-bootstrap";
 import UserLogin from "./User/UserLogin";
 
 export default class App extends React.Component {
@@ -17,7 +17,7 @@ export default class App extends React.Component {
                 <br/>
 
 
-                <UserLogin></UserLogin>
+                <UserLogin history={this.props.history}></UserLogin>
 
 
                 <IndexFooter></IndexFooter>
